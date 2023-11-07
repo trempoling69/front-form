@@ -1,4 +1,4 @@
-import { ReactNode, createContext, useContext, useState } from 'react';
+import { ReactNode, createContext, useCallback, useContext, useState } from 'react';
 import { get } from '../Api/fetchCall';
 
 type User = {
@@ -8,18 +8,18 @@ type User = {
   updated_at: string;
   created_at: string;
 };
-type AuthContext = {
+type AuthContextType = {
   isLogin: boolean | undefined;
   user: User | undefined;
   getUser: () => Promise<void>;
 };
-export const AuthContext = createContext<AuthContext | undefined>(undefined);
+export const AuthContext = createContext<AuthContextType | undefined>(undefined);
 
 export const AuthProvider = ({ children }: { children: ReactNode }) => {
   const [isLogin, setIsLogin] = useState<boolean>();
   const [user, setUser] = useState<User>();
 
-  const getUser = async () => {
+  const getUser = useCallback(async () => {
     try {
       const userResp = await get<User>('/user');
       setIsLogin(true);
@@ -28,7 +28,8 @@ export const AuthProvider = ({ children }: { children: ReactNode }) => {
       setIsLogin(false);
       console.log(err);
     }
-  };
+  }, []);
+
   return <AuthContext.Provider value={{ isLogin, user, getUser }}>{children}</AuthContext.Provider>;
 };
 
