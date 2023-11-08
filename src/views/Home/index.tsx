@@ -5,10 +5,8 @@ const Home = () => {
   const { user } = useAuthContext();
   const navigate = useNavigate();
   return (
-    <div>
-      <h1>Je Suis {user?.email}</h1>
-      <h3>Ton home</h3>
-      <button onClick={() => navigate('/form')}>Aller au quiz</button>
+    <div className='home-page_container'>
+      <button onClick={() => navigate('/form')} className='button'>Aller au quiz</button>
     </div>
   );
 };

@@ -7,9 +7,11 @@
   
   html {
     font-size: 62.5%;
+    color: black;
   }
 
   body {
     margin: 0;
     padding: 0;
+    background-color: rgba($background, 0.2);
   }

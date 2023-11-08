@@ -20,9 +20,17 @@
     align-items: center;
 
     .login-container{
-        width: 30%;
-        height: 50%;
-        background: rgb(233, 207, 168);
+        width: 35%;
+        height: 55%;
+        //
+        background: rgba($glass, 0.1);
+        border-radius: 16px;
+        box-shadow: -15px 10px 20px rgba(0, 0, 0, 0.1);
+        backdrop-filter: blur(5px);
+        -webkit-backdrop-filter: blur(5px);
+        border: 1px solid rgba(255, 255, 255, 0.3);
+        // border: 1px solid rgba(255, 255, 255, 0.3);
+        //
         display: flex;
         justify-content: center;
         align-items: center;
@@ -51,20 +59,101 @@
                      height: 100%;
                 }
                 .form-login_input{
-                    text-align: center;
-                    border-radius: 2rem;
-                    border: none;
-                    height: 3.5rem;
-                    font-size: 1.6rem;
+                    border-radius: 5px;
+                    padding: 1rem;
                     width: 100%;
+                    height: 5rem;
+                    border: none;
+                    font-size: 1.6rem;
+                    background: rgba(white, 0.1);
+                    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
                 }
                 .form-login_submit{
-                    height: 3.5rem;
-                    border-radius: 2rem;
+                    position: relative;
+                    border-radius: 5px;
+                    height: 5.5rem;
                     border: none;
                     font-size: 1.8rem;
+                    background-color: $glass;
+                    &::before{
+                        border-radius: 5px;
+                        transition: all .7s;
+                        position: absolute;
+                        z-index: -1;
+                        content: '';
+                        display: block;
+                        text-align: center;
+                        inset: 0;
+                        width: 100%;
+                        height: 100%;
+                    }
+                    &::after{
+                        border-radius: 5px;
+                        transition: all .7s;
+                        position: absolute;
+                        z-index: -1;
+                        content: '';
+                        display: block;
+                        text-align: center;
+                        inset: 0;
+                        width: 100%;
+                        height: 100%;
+                    }
+                    &:hover::after{
+                        transition: all .7s;
+                        left: 5%;
+                        top: 20%;
+                        background: rgba($glass, 0.4);
+                        box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+                        // backdrop-filter: blur(1px);
+                        // -webkit-backdrop-filter: blur(5px);
+                    }
+                    &:hover::before{
+                        transition: all .7s;
+                        left: -5%;
+                        top: -20%;
+                        background: rgba($glass, 0.4);
+                        box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+                        // backdrop-filter: blur(1px);
+                        // -webkit-backdrop-filter: blur(5px);
+                    }
                 }
             }
         }
     }
 }
+
+.magicpattern { 
+    position: absolute;
+    inset: 0;
+    left: 20%;
+    top: 55%;
+    box-shadow: -10px 7px 20px rgba(0, 0, 0, 0.3);
+    @include square(25rem, $blue, 30deg);
+  }
+  .magicpattern2{
+    position: absolute;
+    inset: 0;
+    background-color: transparent;
+    left: 50%;
+    top: 3%;
+    @include triangle(20rem, 12rem, $yellow, 20deg);
+  }
+  .magicpattern3{
+    z-index: 999; 
+    box-shadow: -10px 7px 20px rgba(0, 0, 0, 0.3);
+    position: absolute;
+    inset: 0;
+    left: 65%;
+    top: 55%;
+    @include circle(22rem, $pink);
+  }
+  .magicpattern4{
+    position: absolute;
+    inset: 0;
+    left: -15%;
+    top: -35%;
+    box-shadow: -10px 7px 20px rgba(0, 0, 0, 0.3);
+    @include circleEmpty(70rem,$green);
+  }
+  

@@ -1,4 +1,5 @@
+@import './variable.scss';
+@import './mixin.scss';
 @import './global.scss';
-@import './views/login.scss';
-@import './views/register.scss';
-@import './components/questionField.scss';
+@import './views/views.scss';
+@import './components/components.scss';

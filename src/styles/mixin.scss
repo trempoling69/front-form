@@ -1,0 +1,32 @@
+@mixin square ($size, $color, $rotate){
+    width: $size;
+    height: $size;
+    border-radius: 20px;
+    background-color: $color;
+    transform: rotate($rotate);
+}
+
+@mixin triangle ($base, $side, $color, $rotate) {
+    display : inline-block;
+    height : 0;
+    width : 0;
+    border-right : $side solid transparent;
+    border-bottom : $base solid $color;
+    border-left : $side solid transparent;
+    transform: rotate($rotate);
+}
+
+@mixin circle ($size, $color){
+    width: $size;
+    height: $size;
+    background-color: $color;
+    border-radius: 9999px;
+}
+
+@mixin circleEmpty ($size, $color){
+    width: $size;
+    height: $size;
+    background-color: transparent;
+    border: 50px solid $color;
+    border-radius: 9999px;
+}

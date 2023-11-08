@@ -43,6 +43,11 @@ const Login = () => {
   };
   return (
     <div className="page-login_container">
+      <div className="magicpattern"></div>
+      <div className="magicpattern2"></div>
+      <div className="magicpattern3"></div>
+      <div className="magicpattern4"></div>
+      {/* <div className="magic-container"></div> */}
       <div className="login-container">
         <div className="form-login_container">
           <h2 className="form-login_title">Se connecter</h2>
@@ -68,7 +73,7 @@ const Login = () => {
                 render={({ message }) => <div className="form_error-message">{message}</div>}
               />
             </div>
-            <button className="form-login_submit">se connecter</button>
+            <button className="form-login_submit">Se connecter</button>
           </form>
           {errorLogin && <h2 className="form_error_submit-message">{errorMessage}</h2>}
         </div>

@@ -5,8 +5,7 @@ const Form = () => {
   const { form } = useGetForm(1);
   console.log(form);
   return (
-    <div>
-      <h1>ICI</h1>
+    <div className='form-page_container'>
       {form && <DisplayField form={form} />}
     </div>
   );

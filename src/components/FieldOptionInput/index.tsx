@@ -3,9 +3,10 @@ import { Controller, useFormContext } from 'react-hook-form';
 type Props = {
   options: FieldOption[];
   name: string;
+  handleRadioButtonClick: () => void;
 };
 
-const FieldOptionInput = ({ options, name }: Props) => {
+const FieldOptionInput = ({ options, name, handleRadioButtonClick }: Props) => {
   const { control } = useFormContext();
   return (
     <>
@@ -23,6 +24,10 @@ const FieldOptionInput = ({ options, name }: Props) => {
                 {...field}
                 value={option.id}
                 checked={field.value == option.id}
+                onChange={(e) => {
+                  field.onChange(e.target.value);
+                  handleRadioButtonClick();
+                }}
               />
               {option.label}
             </label>
