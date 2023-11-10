@@ -19,7 +19,7 @@ function App() {
           <Route element={<AuthLayout />}>
             <Route path="/home" element={<Home />} />
             <Route
-              path="/form"
+              path="/form/:id"
               element={
                 <QuizProvider>
                   <Form />

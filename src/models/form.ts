@@ -7,6 +7,7 @@ export type Form = {
 
 export type Field = {
   id: number;
+  name: string;
   label: string;
   order: number;
   form_id: number;

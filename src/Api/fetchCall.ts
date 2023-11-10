@@ -7,9 +7,10 @@ type GenericRequestError = {
   status: string;
   message: string;
 };
-
+//http://192.168.1.68:8000/api/
+//http://localhost:8000/api/
 const axiosIntance = axios.create({
-  baseURL: 'http://localhost:8000/api/',
+  baseURL: 'http://192.168.1.68:8000/api/',
 });
 
 const handleReponse = <T>(response: AxiosResponse<T>) => {

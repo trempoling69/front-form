@@ -4,7 +4,12 @@
 }
 
 .form-page_container-form{
+    z-index: 9999;
+    width: 100%;
+    height: 100%;
     display: flex;
+    justify-content: center;
+    align-items: center;
     flex-direction: column;
     gap: 3rem;
 }

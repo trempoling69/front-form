@@ -1,0 +1,109 @@
+.result-page_container{
+    position: absolute;
+    width: 100vw;
+    height: 100%;
+    background-color: $purple;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 4rem;
+    @include media-max('desktop-up'){
+       gap: 3rem;
+    }
+    .result-page_title{
+        font-size: 6rem;
+        font-weight: bold;
+        @include media-max('desktop-up'){
+            font-size: 4rem;
+        }
+    }
+    .shade{
+        position: absolute;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+        height: 100%;
+        overflow: hidden;
+        background: linear-gradient(0deg, rgba(2,0,36,0.95) 20%, rgba(0,0,0,0) 55%);        
+        @include media-max('desktop-up'){
+            background: linear-gradient(0deg, rgba(2,0,36,0.95) 25%, rgba(0,0,0,0) 60%); 
+        }
+    }
+    .result-page_img-container{
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        width: 30vw;
+        height: 60vh;
+        overflow: hidden;
+        border-radius: 20px;
+        @include media-max('desktop-up'){
+            width: 90%;
+        }
+        .result-page_img{
+            height: 100%;
+        }
+        .result-page_details{
+            z-index: 999;
+            bottom: 0;
+            color: white;
+            position: absolute;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            gap: 1rem;
+            text-align: center;
+            @include media-max('desktop-up'){
+               gap: .5rem;
+            }
+            .result-page_name{
+                font-size: 2rem;
+                font-weight: bold;
+            }
+            .result-page_description{
+                font-size: 1.5rem;
+                width: 80%;
+                padding: 2rem;
+                @include media-max('desktop-up'){
+                    padding: 1rem;
+                    width: 100%;
+                }
+            }
+        }
+    }
+
+    .result-page_reload{
+        color: $black;
+        background-color: $yellow;
+        cursor: pointer;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 2rem;
+        font-size: 2rem;
+        width: 25rem;
+        height: 5rem;
+        border-radius: 20px;
+        border: none;
+        svg{
+            width: 2rem;
+        }
+    }
+    .other{
+        margin-top: 1rem;
+    }
+    .result-page_social{
+        display: flex;
+        gap: 5rem;
+        .result-page_icon{
+            width: 4rem;
+            cursor: pointer;
+        }
+    }
+}

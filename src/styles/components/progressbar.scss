@@ -1,19 +1,19 @@
 .progressbar_container{
-    display: flex;
-    align-items: center;
-    gap: 2rem;
+    position: absolute;
+    width: 100%;
+    height: 100%;
     .progressbar_bar-container{
-        background-color: gray;
-        width: 15vw;
-        height: 2.5vh;
-        border-radius: 20px;
+        width: 100%;
+        height: 100%;
+        background-color: $background;
         .progressbar_bar-fill{
-            height: 2.5vh;
-            background-color: red;
-            border-radius:20px;
+            transition: all 1s;
+            height: 100%;
+            background-color: $purple;
         }
     }
     .progressbar-completion-count{
+        display: none;
         font-size: 2.5rem;
         font-style: italic;
     }

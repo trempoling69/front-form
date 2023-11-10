@@ -15,7 +15,7 @@ const useManageForm = (form: Form) => {
     // eslint-disable-next-line @typescript-eslint/no-explicit-any
     const object: Record<string, any> = {};
     form.fields.slice(0, currentStep + 1).forEach((field) => {
-      object[field.label] = z.string().min(1, { message: 'Vous devez sélectionner un champ' });
+      object[field.name] = z.string().min(1, { message: 'Vous devez sélectionner un champ' });
     });
     return z.object(object);
   };
@@ -38,7 +38,6 @@ const useManageForm = (form: Form) => {
   };
   const onSubmit: SubmitHandler<formType> = async (values) => {
     console.log(values);
-    // setAnswer(values);
     nextStep();
     if (isLastQuestion) {
       const newAnswer = buildAnswerToPost(values);

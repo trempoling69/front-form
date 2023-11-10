@@ -2,12 +2,31 @@
     display: flex;
     flex-direction: column;
     justify-content: center;
-    gap: 2rem;
-    width: 35vw;
-    height: 35vh;
-
+    align-items: center;
+    gap: 10rem;
+    width: 85%;
+    height: 85%;
+    @include media-max('desktop-up'){
+        gap: 5rem;
+        height: 90%;
+    }
     .questionField_label-question{
-        font-size: 2.5rem;
+        font-size: 4rem;
+        text-align: center;
         font-weight: bold;
+        @include media-max('desktop-up'){
+            font-size: 2rem;
+        }
+    }
+
+    .questionField_option-container{
+        display: flex;
+        flex-direction: column;
+        width: 50%;
+        height: 80%;
+        gap: 2rem;
+        @include media-max('desktop-up'){
+           width: 100%;
+        }
     }
 }

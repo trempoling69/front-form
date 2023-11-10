@@ -47,7 +47,6 @@ const Login = () => {
       <div className="magicpattern2"></div>
       <div className="magicpattern3"></div>
       <div className="magicpattern4"></div>
-      {/* <div className="magic-container"></div> */}
       <div className="login-container">
         <div className="form-login_container">
           <h2 className="form-login_title">Se connecter</h2>
@@ -73,7 +72,12 @@ const Login = () => {
                 render={({ message }) => <div className="form_error-message">{message}</div>}
               />
             </div>
-            <button className="form-login_submit">Se connecter</button>
+            <button type="submit" className="form-login_submit">
+              Se connecter
+            </button>
+            <button type="button" onClick={() => navigate('/register')} className="form-login_to-register">
+              Créer un compte
+            </button>
           </form>
           {errorLogin && <h2 className="form_error_submit-message">{errorMessage}</h2>}
         </div>

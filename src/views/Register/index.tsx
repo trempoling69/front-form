@@ -44,6 +44,10 @@ const Register = () => {
   };
   return (
     <div className="page-login_container">
+      <div className="magicpattern"></div>
+      <div className="magicpattern2"></div>
+      <div className="magicpattern3"></div>
+      <div className="magicpattern4"></div>
       <div className="login-container">
         <div className="form-login_container">
           <h2 className="form-login_title">Créer un compte</h2>
@@ -77,7 +81,12 @@ const Register = () => {
                 render={({ message }) => <div className="form_error-message">{message}</div>}
               />
             </div>
-            <button className="form-login_submit">s'inscrire</button>
+            <button type="submit" className="form-login_submit">
+              s'inscrire
+            </button>
+            <button type="button" onClick={() => navigate('/login')} className="form-login_to-register">
+              Se connecter
+            </button>
           </form>
           {errorRegister && <h2 className="form_error_submit-message">{errorMessage}</h2>}
         </div>

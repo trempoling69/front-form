@@ -23,10 +23,35 @@
     border-radius: 9999px;
 }
 
-@mixin circleEmpty ($size, $color){
+@mixin circleEmpty ($size, $color, $border){
     width: $size;
     height: $size;
     background-color: transparent;
-    border: 50px solid $color;
+    border: $border solid $color;
     border-radius: 9999px;
+}
+
+@mixin egg ($width,$height, $color){
+    display: block;
+    width: $width;
+    height: $height;
+    background-color: $color;
+    border-radius: 50% 50% 50% 50% / 60% 60% 40% 40%;
+}
+
+$breakpoints: (
+  'phone-down': 500px,
+  'tablet-up': 768px,
+  'tablet-down': 900px,
+  'desktop-up': 1024px,
+  'desktop-down': 1280px,
+  'widescreen-up': 1440px,
+);
+
+@mixin media-max($_key) {
+  @media screen and (max-width: map-get($breakpoints, $_key)) {
+    & {
+      @content;
+    }
+  }
 }
